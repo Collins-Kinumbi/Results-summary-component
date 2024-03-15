@@ -97,9 +97,10 @@ ul {
 .percentage {
   background: linear-gradient(
     180deg in oklab,
-    var(--LightRoyalBlueBackground),
-    var(--PersianBlueCircle)
+    var(--PersianBlueCircle),
+    hsla(252, 100%, 67%, 0.041)
   );
+
   width: 19rem;
   height: 19rem;
   margin: auto;
