@@ -11,7 +11,7 @@
   --LightSlateBlueBackground: hsl(252, 100%, 67%);
   --LightRoyalBlueBackground: hsl(241, 81%, 54%);
   --VioletBlueCircle: hsla(256, 72%, 46%, 1);
-  --PersianBlueCircle: hsla(241, 72%, 46%, 0);
+  --PersianBlueCircle: hsla(241, 72%, 46%, 1);
 
   /* Neutrals */
   --White: hsl(0, 0%, 100%);
@@ -43,11 +43,15 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  gap: 4rem;
 }
 
 p {
   font-size: 1.6rem;
+}
+
+span {
+  font-weight: 800;
 }
 
 ul {
@@ -55,7 +59,7 @@ ul {
 }
 
 .container {
-  max-width: 70rem;
+  max-width: 65rem;
   width: 100%;
   margin: auto;
   margin-top: 10rem;
@@ -64,21 +68,26 @@ ul {
 
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  column-gap: 6rem;
+  /* column-gap: 6rem; */
 
   /* offset-x | offset-y | blur-radius | spread-radius | color */
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 20px 60px 0px rgba(46, 43, 233, 0.2);
 }
 
 .results {
   text-align: center;
-  background-color: var(--LightSlateBlueBackground);
+  background: linear-gradient(
+    180deg in oklab,
+    var(--LightSlateBlueBackground),
+    var(--PersianBlueCircle)
+  );
+
   padding: 2.8rem 4.6rem;
   border-radius: 2rem;
 }
 
 .results h1 {
-  margin-bottom: 2rem;
+  margin-bottom: 3.4rem;
 }
 
 .results span {
@@ -86,9 +95,13 @@ ul {
 }
 
 .percentage {
-  background-color: var(--LightRoyalBlueBackground);
-  width: 18rem;
-  height: 18rem;
+  background: linear-gradient(
+    180deg in oklab,
+    var(--LightRoyalBlueBackground),
+    var(--PersianBlueCircle)
+  );
+  width: 19rem;
+  height: 19rem;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -102,8 +115,155 @@ ul {
   color: var(--White);
 }
 
+.text {
+  margin-bottom: 1.4rem;
+}
+
 .text span {
   font-size: 2.8rem;
   color: var(--White);
   margin-bottom: 1.2rem;
+}
+
+.summary {
+  display: flex;
+  flex-direction: column;
+  padding: 2.8rem 3.6rem;
+}
+
+.summary h2 {
+  font-size: 2rem;
+  color: var(--DarkGrayBlue);
+  margin-bottom: 2rem;
+}
+
+.summaries {
+  margin-bottom: 3.8rem;
+}
+
+.summaries li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.6rem;
+  font-size: 1.4rem;
+  border-radius: 1rem;
+}
+
+.summaries li:not(:last-child) {
+  margin-bottom: 1.2rem;
+}
+
+.dec {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.stats span:first-child {
+  color: var(--DarkGrayBlue);
+}
+.stats span:last-child {
+  color: var(--LightLavender);
+}
+
+.summaries li:nth-child(1) {
+  color: var(--LightRed);
+  background-color: hsla(0, 100%, 67%, 0.062);
+}
+
+.summaries li:nth-child(2) {
+  color: var(--OrangeyYellow);
+  background-color: hsl(39, 100%, 56%, 0.062);
+}
+.summaries li:nth-child(3) {
+  color: var(--GreenTeal);
+  background-color: hsl(166, 100%, 37%, 0.062);
+}
+.summaries li:nth-child(4) {
+  color: var(--CobaltBlue);
+  background-color: hsl(234, 85%, 45%, 0.062);
+}
+
+button {
+  position: relative;
+  font-size: 1.5rem;
+  color: var(--White);
+  background-color: var(--DarkGrayBlue);
+  z-index: 1;
+  padding: 1.6rem 2.4rem;
+  border-radius: 3rem;
+  border: transparent;
+  cursor: pointer;
+}
+
+button:hover {
+  background: linear-gradient(
+    180deg in oklab,
+    var(--LightSlateBlueBackground),
+    var(--LightRoyalBlueBackground)
+  );
+}
+
+.attribution {
+  font-size: 1.8rem;
+  text-align: center;
+  color: var(--DarkGrayBlue);
+  margin-bottom: 4rem;
+}
+.attribution a {
+  color: var(--CobaltBlue);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+/* MEDIA QUERIES */
+/* 700px / 16px = 43.75em*/
+
+@media (max-width: 43.75em) {
+  .container {
+    max-width: 60rem;
+    margin-top: 5rem;
+  }
+  .percentage {
+    width: 16rem;
+    height: 16rem;
+  }
+  .percentage span {
+    font-size: 6rem;
+  }
+  .text {
+    margin-top: 3.6rem;
+    margin-bottom: 0;
+  }
+}
+
+/* 430px / 16px = 26.875em */
+@media (max-width: 26.875em) {
+  .container {
+    max-width: 42rem;
+    grid-template-columns: 1fr;
+    margin-top: -5rem;
+  }
+
+  .results {
+    padding-top: 10rem;
+    padding-bottom: 3.8rem;
+  }
+
+  .attribution {
+    font-size: 1.2rem;
+  }
+}
+
+/* 320px / 16px = 20em */
+@media (max-width: 20em) {
+  .results {
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+  }
+
+  .attribution {
+    font-size: 1.1rem;
+  }
 }
