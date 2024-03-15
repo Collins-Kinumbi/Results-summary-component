@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  /* Primary */
+  --LightRed: hsl(0, 100%, 67%);
+  --OrangeyYellow: hsl(39, 100%, 56%);
+  --GreenTeal: hsl(166, 100%, 37%);
+  --CobaltBlue: hsl(234, 85%, 45%);
+
+  /* Gradients */
+  --LightSlateBlueBackground: hsl(252, 100%, 67%);
+  --LightRoyalBlueBackground: hsl(241, 81%, 54%);
+  --VioletBlueCircle: hsla(256, 72%, 46%, 1);
+  --PersianBlueCircle: hsla(241, 72%, 46%, 0);
+
+  /* Neutrals */
+  --White: hsl(0, 0%, 100%);
+  --PaleBlue: hsl(221, 100%, 96%);
+  --LightLavender: hsl(241, 100%, 89%);
+  --DarkGrayBlue: hsl(224, 30%, 27%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  /* 10px / 16px = 0.625 === 62.5% */
+  font-size: 64.5%;
+
+  /* - Weights: 500, 700, 800 */
+  font-weight: 500;
+}
+
+body {
+  font-family: "Hanken Grotesk", sans-serif;
+  color: var(--LightLavender);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+p {
+  font-size: 1.6rem;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: 70rem;
+  width: 100%;
+  margin: auto;
+  margin-top: 10rem;
+  /* padding: 2rem 4rem; */
+  border-radius: 2rem;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 6rem;
+
+  /* offset-x | offset-y | blur-radius | spread-radius | color */
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.results {
+  text-align: center;
+  background-color: var(--LightSlateBlueBackground);
+  padding: 2.8rem 4.6rem;
+  border-radius: 2rem;
+}
+
+.results h1 {
+  margin-bottom: 2rem;
+}
+
+.results span {
+  display: block;
+}
+
+.percentage {
+  background-color: var(--LightRoyalBlueBackground);
+  width: 18rem;
+  height: 18rem;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 50%;
+  margin-bottom: 2rem;
+}
+
+.percentage span {
+  font-size: 8rem;
+  color: var(--White);
+}
+
+.text span {
+  font-size: 2.8rem;
+  color: var(--White);
+  margin-bottom: 1.2rem;
+}
