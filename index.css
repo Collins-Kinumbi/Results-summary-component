@@ -47,7 +47,7 @@ main {
 }
 
 p {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
 }
 
 span {
@@ -240,6 +240,10 @@ button:hover {
 
 /* 430px / 16px = 26.875em */
 @media (max-width: 26.875em) {
+  p {
+    font-size: 1.6rem;
+  }
+
   .container {
     max-width: 42rem;
     grid-template-columns: 1fr;
