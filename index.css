@@ -37,6 +37,10 @@ html {
 body {
   font-family: "Hanken Grotesk", sans-serif;
   color: var(--LightLavender);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 main {
@@ -210,7 +214,7 @@ button:hover {
   font-size: 1.8rem;
   text-align: center;
   color: var(--DarkGrayBlue);
-  margin-bottom: 4rem;
+  /* margin-bottom: 4rem; */
 }
 .attribution a {
   color: var(--CobaltBlue);
